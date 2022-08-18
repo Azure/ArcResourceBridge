@@ -12,24 +12,51 @@ Param(
         }
         return $true 
     })]
-    [System.IO.FileInfo]$config
+    [System.IO.FileInfo]$config,
+    [string]$location,
+    [string]$applianceSubscriptionId,
+    [string]$applianceResourceGroupName,
+    [string]$applianceName,
+    [string]$customLocationSubscriptionId,
+    [string]$customLocationResourceGroupName,
+    [string]$customLocationName,
+    [string]$vCenterSubscriptionId,
+    [string]$vCenterResourceGroupName,
+    [string]$vCenterName
 )
 
 # Start Region: Set user inputs
 
-$location = 'region'
+if (!$location)
+    {$location = Read-Host -Prompt 'Enter region of your current Arc resource bridge'}
 
-$applianceSubscriptionId = 'subscription_id'
-$applianceResourceGroupName = 'resource_group'
-$applianceName = 'appliance_name'
+if (!$applianceSubscriptionId)
+    {$applianceSubscriptionId = Read-Host -Prompt 'Enter the Subscription ID of your Arc resource bridge'}
 
-$customLocationSubscriptionId = 'subscription_id'
-$customLocationResourceGroupName = 'resource_group'
-$customLocationName = 'appliance_name'
+if (!$applianceResourceGroupName)
+    {$applianceResourceGroupName = Read-Host -Prompt 'Enter the Resource Group name of your Arc resource bridge'}
 
-$vCenterSubscriptionId = 'subscription_id'
-$vCenterResourceGroupName = 'resource_group'
-$vCenterName = 'appliance_name'
+if (!$applianceName)
+    {$applianceName = Read-Host -Prompt 'Enter the original name in Azure of your current Arc resource bridge'}
+
+if (!$customLocationSubscriptionId)
+    {$customLocationSubscriptionId = Read-Host -Prompt 'Enter the Subscription ID of your custom location'}
+
+if (!$customLocationResourceGroupName)
+    {$customLocationResourceGroupName = Read-Host -Prompt 'Enter the Resource Group name of your custom location'}
+
+# TODO: Allow for multiple custom location inputs
+if (!$customLocationName)
+    {$customLocationName = Read-Host -Prompt 'Enter the current name in Azure of your custom location'}
+
+if (!$vCenterSubscriptionId)
+    {$vCenterSubscriptionId = Read-Host -Prompt 'Enter the Subscription ID of your vCenter resource in Azure'}
+
+if (!$vCenterResourceGroupName)
+    {$vCenterResourceGroupName = Read-Host -Prompt 'Enter the Resource Group name of your vCenter resource in Azure'}
+    
+if (!$vCenterName)
+    {$vCenterName = Read-Host -Prompt 'Enter the current name of your vCenter resource in Azure'}
 
 # End Region: Set user inputs
 
@@ -166,7 +193,7 @@ try {
 
     createRG "$applianceSubscriptionId" "$applianceResourceGroupName"
 
-    logH1 "Step 2/5: Creating the Arc resource bridge"
+    logH1 "Step 2/5: Deleting and recreating a healthy Arc resource bridge"
     logH2 "Provide vCenter details to deploy Arc resource bridge VM. The credentials will be used by Arc resource bridge to update and scale itself."
 
     # TODO: Fetch necessary information for all related ARM resources
