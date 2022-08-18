@@ -1,14 +1,10 @@
 # Project
 
-> This repo has been populated by an initial template to help get you started. Please
-> make sure to update the content to build a great experience for community-building.
+Azure Arc resource bridge (preview) is part of the core Azure Arc platform, and is designed to host other Azure Arc services.  This repository contains relevant resources for administering Azure Arc resource bridge (preview).
 
-As the maintainer of this project, please make a few updates:
+NOTE: Any resources here might still be in development and should only be used after consulting relevant documentation.
 
-- Improving this README.MD file to provide a great experience
-- Updating SUPPORT.MD with content about this project's support experience
-- Understanding the security reporting process in SECURITY.MD
-- Remove this section from the README
+Learn more: Azure Arc resource bridge (preview) overview - Azure Arc | Microsoft Docs
 
 ## Contributing
 
