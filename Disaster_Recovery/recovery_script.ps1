@@ -189,7 +189,7 @@ try {
     az extension add --upgrade --name customlocation
     az extension add --upgrade --name connectedvmware
 
-    logH1 "Step 1/5: All extensions successfully installed"
+    logH1 "Completed Step 1/5: Workstation configured and all extensions successfully installed"
 
     createRG "$applianceSubscriptionId" "$applianceResourceGroupName"
 
@@ -229,7 +229,7 @@ try {
         throw "Appliance is not in running state. Current state: $applianceStatus."
     }
 
-    logH1 "Step 2/5: Arc resource bridge is back up and running"
+    logH1 "Completed Step 2/5: Arc resource bridge is back up and running"
     logH1 "Step 3/5: Reinstalling cluster extension"
 
     az k8s-extension create --debug --subscription $applianceSubscriptionId --resource-group $applianceResourceGroupName --name azure-vmwareoperator --extension-type 'Microsoft.vmware' --scope cluster --cluster-type appliances --cluster-name $applianceName --config Microsoft.CustomLocation.ServiceAccount=azure-vmwareoperator 2>> $logFile
@@ -243,7 +243,7 @@ try {
         throw "Provisioning State of cluster extension is not succeeded. Current state: $clusterExtensionState."
     }
 
-    logH1 "Step 3/5: Cluster extension reinstalled successfully"
+    logH1 "Completed Step 3/5: Cluster extension reinstalled successfully"
     logH1 "Step 4/5: Reconnecting custom location"
 
     createRG "$customLocationSubscriptionId" "$customLocationResourceGroupName"
@@ -260,7 +260,7 @@ try {
         throw "Provisioning State of custom location is not succeeded. Current state: $customLocationState."
     }
 
-    logH1 "Step 4/5: Custom location reconnected successfully"
+    logH1 "Completed Step 4/5: Custom location reconnected successfully"
     logH1 "Step 5/5: Reconnecting to vCenter"
 
     createRG "$vCenterSubscriptionId" "$vCenterResourceGroupName"
@@ -280,7 +280,7 @@ try {
         throw "Provisioning State of vCenter is not succeeded. Current state: $vcenterState."
     }
 
-    logH1 "Step 5/5: vCenter was reconnected successfully"
+    logH1 "Completed Step 5/5: vCenter was reconnected successfully"
     logH1 "Your vCenter has been successfully reonboarded to Azure Arc and recovery is completed!"
 }
 catch {
