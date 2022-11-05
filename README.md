@@ -1,14 +1,16 @@
-# Project
+# Arc Resource Bridge (Preiew)
 
-> This repo has been populated by an initial template to help get you started. Please
-> make sure to update the content to build a great experience for community-building.
+Azure Arc resource bridge (preview) is part of the core Azure Arc platform, and is designed to host other Azure Arc services.  This repository contains relevant resources for administering Azure Arc resource bridge (preview).
 
-As the maintainer of this project, please make a few updates:
+NOTE: Any resources here might still be in development and should only be used after consulting relevant documentation.
 
-- Improving this README.MD file to provide a great experience
-- Updating SUPPORT.MD with content about this project's support experience
-- Understanding the security reporting process in SECURITY.MD
-- Remove this section from the README
+Learn more: [Arc resource bridge (preview)](https://docs.microsoft.com/en-us/azure/azure-arc/resource-bridge/overview)
+
+## Disaster Recovery
+
+In disaster scenarios for the Arc resource bridge (i.e. accidental deletion or hardware failure), disaster recovery is a last-resort method to recreate a healthy Arc resource bridge and restore the original state of the user's Arc-enabled system.
+
+The Disaster_Recovery folder contains an in-development PowerShell script that supports this process.  Once again, consult the relevant documentation linked above before running.
 
 ## Contributing
 
