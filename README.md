@@ -1,4 +1,4 @@
-# Arc Resource Bridge (Preiew)
+# Arc Resource Bridge (Preview)
 
 Azure Arc resource bridge (preview) is part of the core Azure Arc platform, and is designed to host other Azure Arc services.  This repository contains relevant resources for administering Azure Arc resource bridge (preview).
 
