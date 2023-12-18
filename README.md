@@ -1,6 +1,6 @@
-# Arc Resource Bridge (Public Preview)
+# Arc Resource Bridge
 
-Azure Arc Resource Bridge (Public Preview) is part of the core Azure Arc platform, and is designed to host other Azure Arc services.  This repository contains relevant resources for administering Azure Arc resource bridge (preview).
+Azure Arc Resource Bridge is part of the core Azure Arc platform, and is designed to host other Azure Arc services.  This repository contains relevant resources for administering Azure Arc resource bridge (preview).
 
 NOTE: Any resources here might still be in development and should only be used after consulting relevant documentation.
 
