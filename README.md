@@ -4,7 +4,7 @@ Azure Arc Resource Bridge is part of the core Azure Arc platform, and is designe
 
 NOTE: Any resources here might still be in development and should only be used after consulting relevant documentation.
 
-Learn more: [Arc resource bridge (Public Preview)](https://docs.microsoft.com/en-us/azure/azure-arc/resource-bridge/overview)
+Learn more: [Arc resource bridge](https://docs.microsoft.com/en-us/azure/azure-arc/resource-bridge/overview)
 
 ## [Disaster Recovery](./Disaster_Recovery)
 
