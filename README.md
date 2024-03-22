@@ -8,9 +8,9 @@ Learn more: [Arc resource bridge](https://docs.microsoft.com/en-us/azure/azure-a
 
 ## [Disaster Recovery](./Disaster_Recovery)
 
-In disaster scenarios for the Arc resource bridge (i.e. accidental deletion or hardware failure), disaster recovery is a last-resort method to recreate a healthy Arc resource bridge and restore the original state of the user's Arc-enabled system.
+In disaster scenarios for the Arc resource bridge (i.e. accidental deletion or hardware failure), disaster recovery is a last-resort method to recreate a healthy Arc resource bridge and restore the original state of the user's Arc-enabled Vmware system.
 
-The Disaster_Recovery folder contains an in-development PowerShell script that supports this process.  Once again, consult the relevant documentation linked above before running.
+The Disaster_Recovery folder contains an in-development PowerShell script that supports this process for Arc-enabled VMware only.  Once again, consult the relevant documentation linked above before running.
 
 ## Contributing
 
